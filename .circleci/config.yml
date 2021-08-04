@@ -14,7 +14,7 @@ jobs:
           command: |
             ssh -o "StrictHostKeyChecking no" $DEPLOY_USER@$DEPLOY_HOST bash -c "
                 cd /root/opt
-                git clone https://github.com/eclimov/mdshop-webserver ; cd /root/opt/practice-vue-js
+                git clone https://github.com/eclimov/mdshop-webserver ; cd mdshop-webserver
                 git reset --hard
                 git pull
                 docker-compose stop
