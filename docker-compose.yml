@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: docker/ci/nginx/Dockerfile
+    container_name: mdshop-webserver
+    volumes:
+      - '../mdshop-front/dist:/application/front/dist'
+    ports:
+      - 80:80
