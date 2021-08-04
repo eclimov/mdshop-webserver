@@ -7,6 +7,6 @@ services:
       dockerfile: docker/ci/nginx/Dockerfile
     container_name: mdshop-webserver-all
     volumes:
-      - '../mdshop-front/dist:/application/front/dist'
+      - '../mdshop-front:/application/front'
     ports:
       - 80:80
