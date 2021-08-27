@@ -10,3 +10,9 @@ services:
       - '../mdshop-ui-admin:/application/ui-admin'
     ports:
       - 80:80
+    networks:
+      - mdshop-net
+networks:
+  mdshop-net:
+    name: mdshop-net
+    driver: bridge
