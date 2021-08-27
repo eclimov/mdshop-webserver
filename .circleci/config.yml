@@ -1,11 +1,7 @@
 version: 2
 jobs:
-  build:
-    branches:
-      only:
-        - master # list of branches to build
-        # - /feature-.*/ # or regexes
-    working_directory: /dockerapp
+  deploy:
+    working_directory: ~/eclimov/mdshop-webserver
     docker:
       - image: docker:18.05.0-ce-git
     steps:
@@ -23,3 +19,13 @@ jobs:
                 docker image prune -f
                 docker network prune -f
                 docker volume prune -f"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - deploy:
+          context: mdshop
+          filters:
+            branches:
+              only: master
