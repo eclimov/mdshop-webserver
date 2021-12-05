@@ -9,7 +9,7 @@ jobs:
           name: Deploy application to Digital Ocean
           command: |
             ssh -o "StrictHostKeyChecking no" $DEPLOY_USER@$DEPLOY_HOST bash -c "
-                cd /root/opt
+                cd /root/var/www
                 git clone https://github.com/eclimov/mdshop-webserver ; cd mdshop-webserver
                 git reset --hard
                 git pull
